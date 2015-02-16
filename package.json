@@ -1,0 +1,20 @@
+{
+  "name": "malkoMe",
+  "version": "0.0.1",
+  "description": "personal website with a nodejs backend, the goal here is to experiment!",
+  "author": "Malko <malkovitch@gmail.com>",
+  "keywords": [
+    "personal",
+    "website"
+  ],
+  "depedencies": {
+    "express": "*",
+    "async": "*",
+    "mongoose": "*",
+    "stylus": "*",
+    "react": "*"
+  },
+  "devDepedencies": {
+    "nodemon": "*"
+  }
+}
