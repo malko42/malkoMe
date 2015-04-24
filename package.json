@@ -11,8 +11,20 @@
     "debug": "~2.1.1",
     "express": "~4.12.2",
     "jade": "~1.9.2",
+    "mongoose": "^4.0.2",
     "morgan": "~1.5.1",
+    "react": "^0.13.2",
     "serve-favicon": "~2.2.0",
     "stylus": "0.42.3"
+  },
+  "devDependencies": {
+    "css-loader": "^0.11.0",
+    "jade": "^1.9.2",
+    "jade-loader": "^0.7.1",
+    "jsx-loader": "^0.13.1",
+    "nib": "^1.1.0",
+    "style-loader": "^0.11.0",
+    "stylus-loader": "^1.1.0",
+    "webpack": "^1.8.9"
   }
 }
