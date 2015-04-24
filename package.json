@@ -2,7 +2,7 @@
   "name": "malkoMe",
   "version": "0.0.0",
   "private": true,
-  "main": "bin/www"
+  "main": "bin/www",
   "scripts": {
     "start": "node ./bin/www"
   },
