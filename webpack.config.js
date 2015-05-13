@@ -7,11 +7,7 @@ module.exports = {
   extensions: ['', '.js', '.jsx']
   },
   entry: {
-    app: [
-      'webpack-dev-server/client?http://localhost:8080/assets/',
-      'webpack/hot/only-dev-server',
-      './src/js/app.jsx'
-      ],
+    app: './src/js/app.jsx',
   },
   devtool: 'source-map',
   output: {
@@ -23,12 +19,12 @@ module.exports = {
     new webpack.DefinePlugin({
           'process.env.NODE_ENV': '"development"'
       }),
-    // new CommonsChunkPlugin("common.js")
+    new CommonsChunkPlugin("common.js")
   ],
   module: {
     loaders: [
       { test: /\.jade$/, loader: "jade" },
-      { test: /\.(js|jsx)$/, loaders: ['react-hot', 'jsx-loader?harmony'] },
+      { test: /\.(js|jsx)$/, loaders: ['jsx-loader?harmony'] },
       { test: /\.styl$/, loader: 'style-loader!css-loader!stylus-loader' },
       { test: /\.(jpe?g|png|gif|svg)$/i,
         loaders: [
