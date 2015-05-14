@@ -1,0 +1,40 @@
+var _ = require('lodash')
+, React = require('react/addons')
+, Router = require('react-router')
+, TodoActions = require('../actions/TodoActions.js');
+
+// Renders the bottom item count, navigation bar and clearallcompleted button
+// Used in TodoApp
+var TodoFooter = React.createClass({
+    propTypes: {
+        list: React.PropTypes.arrayOf(React.PropTypes.object).isRequired,
+    },
+    render: function() {
+        var nbrcompleted = _.filter(this.props.list, "isComplete").length,
+            nbrtotal = this.props.list.length,
+            nbrincomplete = nbrtotal-nbrcompleted,
+            clearButtonClass = React.addons.classSet({hidden: nbrcompleted < 1}),
+            footerClass = React.addons.classSet({hidden: !nbrtotal }),
+            completedLabel = "Clear completed (" + nbrcompleted + ")",
+            itemsLeftLabel = nbrincomplete === 1 ? " item left" : " items left";
+        return (
+            <footer id="footer" className={footerClass}>
+                <span id="todo-count"><strong>{nbrincomplete}</strong>{itemsLeftLabel}</span>
+                <ul id="filters">
+                    <li>
+                        <Router.Link activeClassName="selected" to="All">All</Router.Link>
+                    </li>
+                    <li>
+                        <Router.Link activeClassName="selected" to="Active">Active</Router.Link>
+                    </li>
+                    <li>
+                        <Router.Link activeClassName="selected" to="Completed">Completed</Router.Link>
+                    </li>
+                </ul>
+                <button id="clear-completed" className={clearButtonClass} onClick={TodoActions.clearCompleted}>{completedLabel}</button>
+            </footer>
+        );
+    }
+});
+
+module.exports = TodoFooter;
