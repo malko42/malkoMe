@@ -1,5 +1,6 @@
 var webpack = require('webpack')
 , nib = require('nib')
+, path = require('path')
 , CommonsChunkPlugin = require("webpack/lib/optimize/CommonsChunkPlugin");;
 
 module.exports = {
@@ -11,7 +12,7 @@ module.exports = {
   },
   devtool: 'source-map',
   output: {
-    path: './dist/js',
+    path: path.join(__dirname, 'dist/js'),
     publicPath: '/js/',
     filename: '[name].js'
   },
@@ -24,7 +25,7 @@ module.exports = {
   module: {
     loaders: [
       { test: /\.jade$/, loader: "jade" },
-      { test: /\.(js|jsx)$/, loaders: ['jsx-loader?harmony'] },
+      { test: /\.(js|jsx)$/, loader: 'jsx-loader?harmony' },
       { test: /\.styl$/, loader: 'style-loader!css-loader!stylus-loader' },
       { test: /\.(jpe?g|png|gif|svg)$/i,
         loaders: [

@@ -8,8 +8,6 @@ var Index = React.createClass({
             <div>
             <input type="text" defaultValue="test"/>
             <hr />
-            <hr />
-            ALLO
             </div>
     );
   }

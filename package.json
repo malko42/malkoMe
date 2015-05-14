@@ -6,7 +6,7 @@
   "scripts": {
     "start": "NODE_ENV=production node ./bin/www",
     "build": "webpack -p",
-    "webp_server": "webpack-dev-server --watch --devtool eval --progress --colors --hot --content-base dist/",
+    "webp_server": "webpack-dev-server --watch --devtool eval --progress --colors --hot --content-base dist/ --port 8082",
     "webp": "webpack --watch --devtool eval --progress --colors",
     "dev": "NODE_ENV=development nodemon ./bin/www"
   },
@@ -32,6 +32,7 @@
     "nib": "^1.1.0",
     "nodemon": "^1.3.7",
     "react-hot-loader": "^1.2.5",
+    "react-router": "^0.13.3",
     "style-loader": "^0.11.0",
     "stylus-loader": "^1.1.0",
     "webpack": "^1.8.9",
