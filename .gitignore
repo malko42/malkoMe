@@ -38,10 +38,10 @@ Thumbs.db
 
 # Node modules #
 ################
-
 node_modules
 
 
-# c9 related
+# c9 related #
+##############
 data
 mongod
