@@ -1,22 +1,20 @@
 var React = require('react')
+, Reflux = require('reflux')
 , Router = require('react-router')
-, Index = require('./index');
-
-// React.render(
-//   <Index />,
-//   document.getElementById('app')
-// );
-
-react.createClass();
+, TodoMain = require('./components/TodoMain.jsx')
+, TodoApp = require('./components/TodoApp.jsx');
 
 var routes = (
-    <Router.Route handler={Index}>
-        <Router.Route name="All" path="/" handler={Index} />
-        <Router.Route name="Completed" path="/completed" handler={Index} />
-        <Router.Route name="Active" path="/active" handler={Index} />
-    </Router.Route>
+        <Router.Route handler={TodoApp}>
+            <Router.Route name="All" path="/" handler={TodoMain("all")} />
+            <Router.Route name="Completed" path="/completed" handler={TodoMain("completed")} />
+            <Router.Route name="Active" path="/active" handler={TodoMain("active")} />
+        </Router.Route>
 );
 
-Router.run(routes, function(Handler) {
-    React.render(<Handler/>, document.getElementById('app'));
+
+Router.run(routes, function (Handler) {
+      React.render(
+        <Handler/>,
+        document.getElementById('app'));
 });

@@ -1,7 +1,16 @@
 extends layout
 
 block content
+  link(href="/css/todo-mvc.css", rel='stylesheet')
   #app
   
+  //- webpack dev server
+  //- script(src="http://localhost:4671/webpack-dev-server.js")
+  //- 
+  //- //- dev
+  //- script(src="http://localhost:4671/js/common.js")
+  //- script(src="http://localhost:4671/js/app.js")
+  
+  //- prod
   script(src="/js/common.js")
   script(src="/js/app.js")
