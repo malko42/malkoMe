@@ -3,7 +3,7 @@ var React = require('react')
 , Router = require('react-router')
 , TodoMain = require('./components/TodoMain.jsx')
 , TodoApp = require('./TodoApp.jsx')
-, Index = require('./components/Index');
+, Index = require('./Index');
 require('../css/style.styl')
 // import { DefaultRoute, Link, Route, RouteHandler } from 'react-router';
 
@@ -13,7 +13,7 @@ var App = React.createClass({
     return (
       <div>
         <nav>
-          <Router.Link to="app">Home</Router.Link>
+          <Router.Link to="app">Home</Router.Link>|
           <Router.Link to="todo">Todo</Router.Link>
         </nav>
         <section>
