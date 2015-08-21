@@ -13,7 +13,10 @@ var App = React.createClass({
     return (
       <div>
         <nav>
-          <Router.Link to="app">Home</Router.Link>|
+          <span id="name"><span className="bold">Malko.</span> aka Maxime Daffis</span>
+          <Router.Link to="app">Home</Router.Link>
+          <Router.Link to="projects">Projects</Router.Link>
+          <Router.Link to="contact">Contact</Router.Link>
           <Router.Link to="todo">Todo</Router.Link>
         </nav>
         <section>
@@ -35,6 +38,8 @@ var routes = (
       <Router.Route name="Active" path="active" handler={TodoMain("active")} />
       <Router.Route name="Completed" path="completed" handler={TodoMain("completed")} />
     </Router.Route>
+    <Router.Route name="contact" path="/contact" handler={Index} />
+    <Router.Route name="projects" path="/projects" handler={Index} />
   </Router.Route>
 );
 

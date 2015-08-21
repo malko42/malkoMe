@@ -1,44 +1,59 @@
 @import nib
-// @import url("http://fonts.googleapis.com/css?family=Roboto:400,300,500");
+@import url("http://fonts.googleapis.com/css?family=Roboto:400,300,500");
 // @import url("https://raw.githubusercontent.com/tastejs/todomvc-common/master/base.css");
+
+*
+  box-sizing border-box
 
 body
   // padding: 50px
   // font: 14px "Lucida Grande", Helvetica, Arial, sans-serif
   // color red
+  background-color: white
 
   #app
     // width 1024px
     // margin 0 auto
 
     nav
+      padding-right 10px
+      padding-left @padding-right
       position fixed
       top 0
       left 0
-      background-color rgba(0, 0, 0, 0.8)
-      height auto
+      background-color rgb(44, 62, 80)
+      height 30px
       line-height @height
       width 100%
       text-align center
       color white
+      z-index 3
 
+      #name
+        display block
+        position absolute
+        float left
+
+        .bold
+          font-weight 800
+          font-size 18px
       a
         color white
         text-decoration none
         display inline-block
-        height 20px
-        padding 10px
-        // padding-left 10px
-        // padding-right @padding-left
+        padding-right 10px
+        padding-left @padding-right
+        height 30px
 
         &:hover
-          background-color rgba(1, 1, 1, 0.8)
-          color #141414
+          background-color #59ABE3
+          // background-color #22A7F0
 
     section
       position relative
-      // width 1024px
-      width 100%
+      width 1024px
+      z-index 2
+      // width 100%
       margin 0 auto
       margin-top 50px
 
@@ -48,9 +63,34 @@ body
         .indexContentBlock
           width 512px
           height @width
-          background-color #141414
-          display inline-block
+          // background-color #141414
+          display block
           position relative
+          float left
+          transition width 0.2s, height 0.2s
+          font-size 14px
+          border 1px solid white
+          color white
+          padding 10px
+          &:hover .glyphicon
+            display block
 
-          &:nth-child(2n)
-            background-color #E25D33
+          &.expandedBlock
+            width 100%
+            height auto
+
+          &>.glyphicon
+            display none
+            cursor pointer
+            position absolute
+            right 0px
+            top @right
+            // background-color black
+            background-color rgb(44, 62, 80)
+            width 20px
+            line-height @width
+            height @width
+            // border-radius 3px
+
+          // &:nth-child(2n)
+          //   background-color #E25D33
