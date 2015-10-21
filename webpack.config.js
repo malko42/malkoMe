@@ -9,7 +9,7 @@ module.exports = {
   },
   entry: {
     app: [
-      'webpack-dev-server/client?http://localhost:4671/js',
+      'webpack-dev-server/client?http://webpack.malko.me/js',
       'webpack/hot/only-dev-server',
       './src/js/app.jsx'
       ],
@@ -17,7 +17,7 @@ module.exports = {
   devtool: 'source-map',
   output: {
     path: path.join(__dirname, 'dist/js'),
-    publicPath: 'http://localhost:4671/js',
+    publicPath: 'http://webpack.malko.me/js',
     filename: '[name].js'
   },
   plugins: [

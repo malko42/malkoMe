@@ -72,12 +72,17 @@ body
           border 1px solid white
           color white
           padding 10px
+
           &:hover .glyphicon
             display block
 
           &.expandedBlock
             width 100%
             height auto
+
+            & .blockHeader
+              width 100%
+              height auto
 
           &>.glyphicon
             display none
@@ -92,5 +97,7 @@ body
             height @width
             // border-radius 3px
 
-          // &:nth-child(2n)
-          //   background-color #E25D33
+          & .blockHeader
+            width 100%
+            height 100%
+            text-transform uppercase
