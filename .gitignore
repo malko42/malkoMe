@@ -46,3 +46,5 @@ node_modules
 data
 mongod
 .env
+
+dist/
